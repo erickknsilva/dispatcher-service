@@ -24,6 +24,8 @@ spring:
         sendPaymentService-in-0:
           destination: payment-accepted
           group: ${spring.application.name}
+        sendPaymentService-out-0:
+          destination: sendPaymentService
 
   rabbitmq:
     host: localhost

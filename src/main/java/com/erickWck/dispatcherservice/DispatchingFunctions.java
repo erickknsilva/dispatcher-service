@@ -21,7 +21,6 @@ public class DispatchingFunctions {
                     log.info("Enviando o detalhes de pagamento para a processadora {}" + details.toString());
                     return PaymentDetails.of(details);
                 });
-
     }
 
 

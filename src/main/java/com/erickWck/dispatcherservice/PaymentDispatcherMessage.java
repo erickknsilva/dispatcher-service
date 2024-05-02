@@ -9,14 +9,16 @@ public record PaymentDispatcherMessage(
         String cardNumber,
         String expiryDate,
         String cvv,
-        String cardholderName
+        String cardholderName,
+        Long orderId
 
 ) {
+
     public static PaymentDispatcherMessage of(BigDecimal amount, String type,
                                               String cardNumber, String expiryDate,
-                                              String cvv, String cardholderName) {
+                                              String cvv, String cardholderName, Long orderId) {
         return new PaymentDispatcherMessage(amount, type,
-                cardNumber, expiryDate, cvv, cardholderName);
+                cardNumber, expiryDate, cvv, cardholderName, orderId);
     }
 
     @Override
@@ -28,6 +30,8 @@ public record PaymentDispatcherMessage(
                 ", expiryDate='" + expiryDate + '\'' +
                 ", cvv='" + cvv + '\'' +
                 ", cardholderName='" + cardholderName + '\'' +
+                ", orderId=" + orderId +
                 '}';
     }
+
 }
